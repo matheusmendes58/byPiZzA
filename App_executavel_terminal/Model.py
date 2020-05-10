@@ -6,12 +6,12 @@ class Banco:
 
     cursor = con.cursor()
     tabela1 = """
-          create table cliente (idcliente integer not null primary key autoincrement,
+          create table if not exists cliente (idcliente integer not null primary key autoincrement,
                                      nome text,
                                      telefone txt, 
                                      endereco txt);"""
 
-    tabela2 = """create table pedido (idpedido integer not null primary key autoincrement,
+    tabela2 = """create table if not exists pedido (idpedido integer not null primary key autoincrement,
                  nome_pizza text,
                  valor real);"""
     cursor.execute(tabela1)
